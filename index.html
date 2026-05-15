@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>벽부수기</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="top-bar">
+      <div>
+        <h1>벽부수기</h1>
+        <p class="subtitle">오른쪽 벽을 부수고 유닛을 구매하세요.</p>
+      </div>
+      <div class="status-panel">
+        <div class="status-item">
+          <span class="status-label">돈</span>
+          <span id="money">0</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">스테이지</span>
+          <span id="wave">1</span>
+        </div>
+        <div class="status-item">
+          <span class="status-label">초당 데미지</span>
+          <span id="dps">0</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="shop-panel">
+      <h2>유닛 상점</h2>
+      <div id="unit-shop" class="unit-grid"></div>
+    </section>
+
+    <main class="game-area">
+      <div class="play-panel">
+        <div class="game-card">
+          <h3>벽 공격</h3>
+          <p>벽을 클릭할 때마다 데미지와 소량의 돈을 얻습니다.</p>
+          <button id="attack-button" class="attack-button">벽 때리기</button>
+          <div class="attack-info">
+            <p>클릭 데미지: <strong id="click-damage">1</strong></p>
+            <p>벽 파괴 보너스: <strong id="destroy-bonus">20</strong></p>
+          </div>
+        </div>
+
+        <div class="game-card">
+          <h3>게임 설명</h3>
+          <ul>
+            <li>벽은 오른쪽에 있습니다.</li>
+            <li>벽을 다 부수면 다음 스테이지 벽이 생성됩니다.</li>
+            <li>유닛은 자동으로 벽을 공격합니다.</li>
+            <li>유닛을 구매할수록 벽 파괴가 쉬워집니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="wall-panel">
+        <div class="wall-card">
+          <div class="wall-info">
+            <span id="wall-name">초급 벽</span>
+            <span id="wall-health">100 / 100</span>
+          </div>
+          <div class="wall-container">
+            <div id="wall" class="wall"></div>
+          </div>
+          <div class="progress-bar">
+            <div id="health-bar" class="health-bar"></div>
+          </div>
+          <div class="wall-stats">
+            <span id="wall-hp-text">체력 100</span>
+            <span id="next-wall-text">다음 벽은 더 강해집니다.</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
